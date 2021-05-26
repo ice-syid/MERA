@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">BangkitCapstone</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="login">Login</string>
+    <string name="register">Register</string>
+
+    <string name="content_description_image">Image</string>
+    <string name="title"><![CDATA[Aplikasi Pengaduan Kekerasan Terhadap Perempuan & Anak]]></string>
 </resources>
