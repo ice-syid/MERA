@@ -114,7 +114,7 @@
         app:layout_constraintTop_toBottomOf="@+id/edt_phone" />
 
     <android.widget.Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_register"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
