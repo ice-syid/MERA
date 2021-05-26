@@ -1,4 +1,4 @@
-package com.example.bangkitcapstone.ui.login
+package com.example.bangkitcapstone.ui.main.login
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.bangkitcapstone.databinding.FragmentLoginBinding
-import com.example.bangkitcapstone.ui.HomeActivity
+import com.example.bangkitcapstone.ui.feature.HomeActivity
 
 class LoginFragment : Fragment() {
 

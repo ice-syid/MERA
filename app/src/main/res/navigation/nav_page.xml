@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/homePageFragment"
-        android:name="com.example.bangkitcapstone.ui.homepage.HomePageFragment"
+        android:name="com.example.bangkitcapstone.ui.main.homepage.HomePageFragment"
         tools:layout="@layout/fragment_home_page" >
         <action
             android:id="@+id/action_homePageFragment_to_loginFragment"
@@ -18,12 +18,12 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.bangkitcapstone.ui.login.LoginFragment"
+        android:name="com.example.bangkitcapstone.ui.main.login.LoginFragment"
         android:label="@string/login"
         tools:layout="@layout/fragment_login" />
     <fragment
         android:id="@+id/registerFragment"
-        android:name="com.example.bangkitcapstone.ui.register.RegisterFragment"
+        android:name="com.example.bangkitcapstone.ui.main.register.RegisterFragment"
         android:label="@string/register"
         tools:layout="@layout/fragment_register" >
         <action

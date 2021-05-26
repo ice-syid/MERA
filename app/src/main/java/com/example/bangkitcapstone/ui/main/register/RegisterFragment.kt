@@ -1,4 +1,4 @@
-package com.example.bangkitcapstone.ui.register
+package com.example.bangkitcapstone.ui.main.register
 
 import android.os.Bundle
 import android.view.LayoutInflater
