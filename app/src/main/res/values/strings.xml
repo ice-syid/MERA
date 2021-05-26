@@ -1,12 +1,18 @@
 <resources>
     <string name="app_name">BangkitCapstone</string>
 
+    <string name="create_account">Create Account</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
-
-    <string name="content_description_image">Image</string>
-    <string name="title"><![CDATA[Aplikasi Pengaduan Kekerasan Terhadap Perempuan & Anak]]></string>
-    <string name="forgotten_password">Forgotten Password?</string>
-    <string name="password">Password</string>
     <string name="nik">NIK</string>
+    <string name="name">Name</string>
+    <string name="email">Email</string>
+    <string name="phone">Phone</string>
+    <string name="password">Password</string>
+    <string name="forgotten_password">Forgotten Password?</string>
+    <string name="upload_photo">Upload Photo</string>
+
+    <string name="title"><![CDATA[Aplikasi Pengaduan Kekerasan Terhadap Perempuan & Anak]]></string>
+    <string name="content_description_image">Image</string>
+    <string name="description_upload_photo">Upload your photo identity (KTP, SIM)</string>
 </resources>

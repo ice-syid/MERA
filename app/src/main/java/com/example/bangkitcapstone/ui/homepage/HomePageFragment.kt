@@ -17,15 +17,22 @@ class HomePageFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentHomePageBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.btnLogin.setOnClickListener {
-            val action = HomePageFragmentDirections.actionHomePageFragmentToLoginFragment()
-            view.findNavController().navigate(action)
+            val actionLogin =
+                HomePageFragmentDirections.actionHomePageFragmentToLoginFragment()
+            view.findNavController().navigate(actionLogin)
+        }
+
+        binding.btnRegister.setOnClickListener {
+            val actionRegister =
+                HomePageFragmentDirections.actionHomePageFragmentToRegisterFragment()
+            view.findNavController().navigate(actionRegister)
         }
     }
 
