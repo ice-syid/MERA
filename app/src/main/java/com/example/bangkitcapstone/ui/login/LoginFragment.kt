@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.bangkitcapstone.databinding.FragmentLoginBinding
-import com.example.bangkitcapstone.ui.home.HomeActivity
+import com.example.bangkitcapstone.ui.HomeActivity
 
 class LoginFragment : Fragment() {
 
