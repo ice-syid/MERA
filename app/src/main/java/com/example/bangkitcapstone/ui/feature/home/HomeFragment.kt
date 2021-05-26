@@ -6,15 +6,33 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.bangkitcapstone.R
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.bangkitcapstone.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
+
+    private var _binding: FragmentHomeBinding? = null
+    private val binding get() = _binding as FragmentHomeBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_home, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        if (activity != null) {
+            val caseAdapter = CaseAdapter()
+            with(binding.rvCase) {
+                layoutManager = LinearLayoutManager(context)
+                setHasFixedSize(true)
+                adapter = caseAdapter
+            }
+        }
     }
 
     override fun onResume() {
