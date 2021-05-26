@@ -6,15 +6,27 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.example.bangkitcapstone.R
+import androidx.navigation.findNavController
+import com.example.bangkitcapstone.databinding.FragmentHomePageBinding
 
 class HomePageFragment : Fragment() {
+
+    private var _binding: FragmentHomePageBinding? = null
+    private val binding get() = _binding as FragmentHomePageBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_home_page, container, false)
+        _binding = FragmentHomePageBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        binding.btnLogin.setOnClickListener {
+            val action = HomePageFragmentDirections.actionHomePageFragmentToLoginFragment()
+            view.findNavController().navigate(action)
+        }
     }
 
     override fun onResume() {
