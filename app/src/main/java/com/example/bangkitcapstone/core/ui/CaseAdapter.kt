@@ -1,4 +1,4 @@
-package com.example.bangkitcapstone.ui.feature.home
+package com.example.bangkitcapstone.core.ui
 
 import android.view.LayoutInflater
 import android.view.View

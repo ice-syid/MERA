@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.bangkitcapstone.core.ui.CaseAdapter
 import com.example.bangkitcapstone.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -17,7 +18,8 @@ class HomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
+        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -33,11 +35,6 @@ class HomeFragment : Fragment() {
                 adapter = caseAdapter
             }
         }
-    }
-
-    override fun onResume() {
-        super.onResume()
-        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
     }
 
     override fun onStop() {
