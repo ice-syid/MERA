@@ -4,8 +4,11 @@
     <string name="create_account">Create Account</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
-    <string name="nik">NIK</string>
     <string name="name">Name</string>
+    <string name="address">Address</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="date">Date</string>
     <string name="email">Email</string>
     <string name="phone">Phone</string>
     <string name="password">Password</string>
@@ -20,4 +23,7 @@
     <string name="profile">Profile</string>
     <string name="rejected">Rejected</string>
     <string name="accepted">Accepted</string>
+    <string name="safe_place">Safe Place</string>
+    <string name="accompaniment">Accompaniment</string>
+    <string name="consultation">Consultation</string>
 </resources>

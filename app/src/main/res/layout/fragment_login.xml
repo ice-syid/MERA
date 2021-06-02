@@ -32,15 +32,15 @@
         app:layout_constraintTop_toBottomOf="@+id/img_logo" />
 
     <EditText
-        android:id="@+id/edt_nik"
+        android:id="@+id/edt_email"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="64dp"
         android:layout_marginEnd="64dp"
         android:layout_marginBottom="16dp"
         android:ems="10"
-        android:hint="@string/nik"
-        android:inputType="textPersonName"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
         android:textColor="@color/white"
         android:textColorHighlight="@color/black"
         android:textColorHint="@color/white"
@@ -60,8 +60,8 @@
         android:textColorHighlight="@color/black"
         android:textColorHint="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/btn_forgotten_password"
-        app:layout_constraintEnd_toEndOf="@+id/edt_nik"
-        app:layout_constraintStart_toStartOf="@+id/edt_nik" />
+        app:layout_constraintEnd_toEndOf="@+id/edt_email"
+        app:layout_constraintStart_toStartOf="@+id/edt_email" />
 
     <Button
         android:id="@+id/btn_forgotten_password"

@@ -18,6 +18,7 @@ class HomePageFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
         _binding = FragmentHomePageBinding.inflate(inflater, container, false)
         return binding.root
     }

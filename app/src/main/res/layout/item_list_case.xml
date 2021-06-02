@@ -15,7 +15,7 @@
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:padding="8dp"
-        android:src="@color/teal_200"
+        android:src="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

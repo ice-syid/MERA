@@ -21,14 +21,14 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/edt_nik"
+        android:id="@+id/edt_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="32dp"
         android:ems="10"
-        android:hint="@string/nik"
+        android:hint="@string/name"
         android:inputType="textPersonName"
         android:textColor="@color/white"
         android:textColorHighlight="@color/black"
@@ -40,19 +40,73 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 
     <EditText
-        android:id="@+id/edt_name"
+        android:id="@+id/edt_address"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:ems="10"
-        android:hint="@string/name"
+        android:hint="@string/address"
         android:inputType="textPersonName"
         android:textColor="@color/white"
         android:textColorHighlight="@color/black"
         android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/edt_nik"
-        app:layout_constraintStart_toStartOf="@+id/edt_nik"
-        app:layout_constraintTop_toBottomOf="@+id/edt_nik" />
+        app:layout_constraintEnd_toEndOf="@+id/edt_name"
+        app:layout_constraintStart_toStartOf="@+id/edt_name"
+        app:layout_constraintTop_toBottomOf="@+id/edt_name" />
+
+    <RadioGroup
+        android:id="@+id/rg_gender"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="@id/edt_address"
+        app:layout_constraintRight_toRightOf="@id/edt_address"
+        app:layout_constraintTop_toBottomOf="@id/edt_address">
+
+        <RadioButton
+            android:id="@+id/rb_male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/male"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/rb_female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/female"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/edt_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/date"
+        android:inputType="date"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/black"
+        android:textColorHint="@color/white"
+        app:layout_constraintLeft_toLeftOf="@id/rg_gender"
+        app:layout_constraintRight_toLeftOf="@id/ib_date"
+        app:layout_constraintTop_toBottomOf="@id/rg_gender" />
+
+    <ImageButton
+        android:id="@+id/ib_date"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@color/grey_900"
+        android:src="@drawable/ic_date"
+        app:layout_constraintBottom_toBottomOf="@+id/edt_date"
+        app:layout_constraintLeft_toRightOf="@id/edt_date"
+        app:layout_constraintRight_toRightOf="@id/rg_gender"
+        app:layout_constraintTop_toTopOf="@+id/edt_date" />
 
     <EditText
         android:id="@+id/edt_email"
@@ -65,9 +119,9 @@
         android:textColor="@color/white"
         android:textColorHighlight="@color/black"
         android:textColorHint="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/edt_name"
-        app:layout_constraintStart_toStartOf="@+id/edt_name"
-        app:layout_constraintTop_toBottomOf="@+id/edt_name" />
+        app:layout_constraintEnd_toEndOf="@+id/ib_date"
+        app:layout_constraintStart_toStartOf="@+id/edt_date"
+        app:layout_constraintTop_toBottomOf="@+id/edt_date" />
 
     <EditText
         android:id="@+id/edt_password"
@@ -100,20 +154,6 @@
         app:layout_constraintTop_toBottomOf="@+id/edt_password" />
 
     <android.widget.Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:background="@color/grey_900"
-        android:drawableStart="@drawable/ic_add_photo_white"
-        android:drawablePadding="8dp"
-        android:text="@string/upload_photo"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/edt_phone"
-        app:layout_constraintStart_toStartOf="@+id/edt_phone"
-        app:layout_constraintTop_toBottomOf="@+id/edt_phone" />
-
-    <android.widget.Button
         android:id="@+id/btn_register"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -128,14 +168,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/tv_desc_photo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/description_upload_photo"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/edt_phone"
-        app:layout_constraintStart_toStartOf="@+id/edt_phone"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
 </androidx.constraintlayout.widget.ConstraintLayout>

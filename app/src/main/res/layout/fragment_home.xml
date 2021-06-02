@@ -8,11 +8,11 @@
     tools:context=".ui.feature.home.HomeFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/layoutHeader"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_home_red"
-        android:paddingBottom="40dp"
+        android:paddingBottom="24dp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -22,7 +22,7 @@
             android:layout_width="86dp"
             android:layout_height="86dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="24dp"
             android:src="@drawable/ic_launcher_foreground"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -36,17 +36,18 @@
             android:fontFamily="sans-serif-medium"
             android:text="Abdurrasyid Muhasibi"
             android:textColor="@color/white"
-            android:textSize="16sp"
+            android:textSize="18sp"
             app:layout_constraintStart_toEndOf="@+id/img_profile"
             app:layout_constraintTop_toTopOf="@+id/img_profile" />
 
         <TextView
-            android:id="@+id/tv_nik"
+            android:id="@+id/tv_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:text="357200320********"
+            android:text="ice.syid@gmail.com"
             android:textColor="@color/white"
+            android:textSize="16sp"
             app:layout_constraintStart_toStartOf="@+id/tv_name"
             app:layout_constraintTop_toBottomOf="@+id/tv_name" />
 
@@ -54,8 +55,8 @@
             android:id="@+id/report"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="27"
+            android:layout_marginTop="24dp"
+            android:text="12"
             android:textColor="@color/white"
             android:textSize="20sp"
             app:layout_constraintEnd_toStartOf="@+id/accepted"
@@ -126,6 +127,76 @@
             app:layout_constraintTop_toTopOf="@+id/tv_accepted" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layoutMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/rv_case"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/layoutHeader">
+
+        <android.widget.Button
+            android:id="@+id/btnNewReport"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/bg_top_left_white"
+            android:drawableTop="@drawable/ic_report"
+            android:padding="8dp"
+            android:text="@string/report"
+            app:layout_constraintEnd_toStartOf="@+id/btnSafePlace"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.widget.Button
+            android:id="@+id/btnSafePlace"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/bg_top_right_white"
+            android:drawableTop="@drawable/ic_home"
+            android:padding="8dp"
+            android:text="@string/safe_place"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnNewReport"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.widget.Button
+            android:id="@+id/btnAccompaniment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/bg_bottom_left_white"
+            android:drawableTop="@drawable/ic_group"
+            android:padding="8dp"
+            android:text="@string/accompaniment"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnConsultation"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnNewReport" />
+
+        <android.widget.Button
+            android:id="@+id/btnConsultation"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:background="@drawable/bg_bottom_right_white"
+            android:drawableTop="@drawable/ic_chat"
+            android:padding="8dp"
+            android:text="@string/consultation"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/btnAccompaniment"
+            app:layout_constraintTop_toBottomOf="@+id/btnSafePlace" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_case"
         android:layout_width="match_parent"
@@ -136,7 +207,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout"
+        app:layout_constraintTop_toBottomOf="@+id/layoutMenu"
         tools:listitem="@layout/item_list_case" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
