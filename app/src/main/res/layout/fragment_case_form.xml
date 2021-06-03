@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/grey_900"
+    tools:context=".ui.feature.cases.CaseFormFragment">
+
+    <TextView
+        android:id="@+id/tv_victim_data"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
+        android:text="@string/victim_data"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edt_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/name"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/black"
+        android:textColorHint="@color/white"
+        android:textColorLink="@color/red_500"
+        app:layout_constraintEnd_toEndOf="@+id/tv_victim_data"
+        app:layout_constraintStart_toStartOf="@+id/tv_victim_data"
+        app:layout_constraintTop_toBottomOf="@+id/tv_victim_data" />
+
+    <EditText
+        android:id="@+id/edt_address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/address"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/black"
+        android:textColorHint="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/edt_name"
+        app:layout_constraintStart_toStartOf="@+id/edt_name"
+        app:layout_constraintTop_toBottomOf="@+id/edt_name" />
+
+    <RadioGroup
+        android:id="@+id/rg_gender"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="@id/edt_address"
+        app:layout_constraintRight_toRightOf="@id/edt_address"
+        app:layout_constraintTop_toBottomOf="@id/edt_address">
+
+        <RadioButton
+            android:id="@+id/rb_male"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/male"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <RadioButton
+            android:id="@+id/rb_female"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:text="@string/female"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/edt_date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/date"
+        android:importantForAutofill="no"
+        android:inputType="date"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/black"
+        android:textColorHint="@color/white"
+        app:layout_constraintLeft_toLeftOf="@id/rg_gender"
+        app:layout_constraintRight_toLeftOf="@id/ib_date"
+        app:layout_constraintTop_toBottomOf="@id/rg_gender" />
+
+    <ImageButton
+        android:id="@+id/ib_date"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:background="@color/grey_900"
+        android:contentDescription="@string/content_description_image"
+        android:src="@drawable/ic_date"
+        app:layout_constraintBottom_toBottomOf="@+id/edt_date"
+        app:layout_constraintLeft_toRightOf="@id/edt_date"
+        app:layout_constraintRight_toRightOf="@id/rg_gender"
+        app:layout_constraintTop_toTopOf="@+id/edt_date" />
+
+    <TextView
+        android:id="@+id/tv_case_data"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/case_data"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/ib_date"
+        app:layout_constraintStart_toStartOf="@+id/edt_date"
+        app:layout_constraintTop_toBottomOf="@+id/edt_date" />
+
+    <Spinner
+        android:id="@+id/spinner_category"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:entries="@array/category"
+        app:layout_constraintEnd_toEndOf="@+id/tv_case_data"
+        app:layout_constraintStart_toStartOf="@+id/tv_case_data"
+        app:layout_constraintTop_toBottomOf="@+id/tv_case_data" />
+
+    <EditText
+        android:id="@+id/edt_description"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="top|start"
+        android:hint="@string/description"
+        android:importantForAutofill="no"
+        android:inputType="textMultiLine"
+        android:lines="3"
+        android:textColor="@color/white"
+        android:textColorHighlight="@color/black"
+        android:textColorHint="@color/white"
+        app:layout_constraintLeft_toLeftOf="@id/spinner_category"
+        app:layout_constraintRight_toRightOf="@id/spinner_category"
+        app:layout_constraintTop_toBottomOf="@id/spinner_category" />
+
+    <android.widget.Button
+        android:id="@+id/btn_register"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="48dp"
+        android:background="@drawable/bg_red"
+        android:text="@string/create"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,11 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.bangkitcapstone.ui.feature.home.HomeFragment"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_caseFormFragment"
+            app:destination="@id/caseFormFragment" />
+    </fragment>
     <fragment
         android:id="@+id/reportFragment"
         android:name="com.example.bangkitcapstone.ui.feature.report.ReportFragment"
@@ -19,4 +23,9 @@
         android:name="com.example.bangkitcapstone.ui.feature.profile.ProfileFragment"
         android:label="@string/profile"
         tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/caseFormFragment"
+        android:name="com.example.bangkitcapstone.ui.feature.cases.CaseFormFragment"
+        android:label="@string/create_a_new_report"
+        tools:layout="@layout/fragment_case_form" />
 </navigation>

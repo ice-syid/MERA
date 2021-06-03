@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.bangkitcapstone.core.ui.CaseAdapter
 import com.example.bangkitcapstone.databinding.FragmentHomeBinding
@@ -34,6 +35,12 @@ class HomeFragment : Fragment() {
                 setHasFixedSize(true)
                 adapter = caseAdapter
             }
+        }
+
+        binding.btnNewReport.setOnClickListener {
+            val actionCreateNewReport =
+                HomeFragmentDirections.actionHomeFragmentToCaseFormFragment()
+            view.findNavController().navigate(actionCreateNewReport)
         }
     }
 

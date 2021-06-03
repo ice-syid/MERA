@@ -2,6 +2,7 @@
     <string name="app_name">BangkitCapstone</string>
 
     <string name="create_account">Create Account</string>
+    <string name="create_a_new_report">Create a New Report</string>
     <string name="login">Login</string>
     <string name="register">Register</string>
     <string name="name">Name</string>
@@ -9,14 +10,14 @@
     <string name="gender">Gender</string>
     <string name="male">Male</string>
     <string name="female">Female</string>
-    <string name="date">Date</string>
+    <string name="date">Date of Birth</string>
     <string name="email">Email</string>
     <string name="phone">Phone</string>
     <string name="password">Password</string>
     <string name="forgotten_password">Forgotten Password?</string>
     <string name="upload_photo">Upload Photo</string>
 
-    <string name="title"><![CDATA[Aplikasi Pengaduan Kekerasan Terhadap Perempuan & Anak]]></string>
+    <string name="title"><![CDATA[Application for Complaints of Violence Against Women & Children]]></string>
     <string name="content_description_image">Image</string>
     <string name="description_upload_photo">Upload your photo identity (KTP, SIM)</string>
     <string name="home">Home</string>
@@ -27,4 +28,18 @@
     <string name="safe_place">Safe Place</string>
     <string name="accompaniment">Accompaniment</string>
     <string name="consultation">Consultation</string>
+    <string name="create">Create</string>
+    <string name="victim_data">Victim Data</string>
+    <string name="case_data">Case Data</string>
+    <string name="description">Description</string>
+
+    <string-array name="category">
+        <item>Select Category</item>
+        <item>Pemerkosaan</item>
+        <item>Perdagangan/Prostitusi</item>
+        <item>KDRT</item>
+        <item>Bully</item>
+        <item>Body Shaming</item>
+        <item>Rasisme</item>
+    </string-array>
 </resources>
