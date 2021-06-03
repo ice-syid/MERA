@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "249892929399",
+    "project_id": "river-portfolio-315106",
+    "storage_bucket": "river-portfolio-315106.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:249892929399:android:d76b2d249951689a186b72",
+        "android_client_info": {
+          "package_name": "com.example.bangkitcapstone"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "249892929399-45ksjcjsm4klrohlnjg1f356rkcvmv0o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAS_E_usi78WitardlnKjgSdG9PBuFoJ7k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "249892929399-45ksjcjsm4klrohlnjg1f356rkcvmv0o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
