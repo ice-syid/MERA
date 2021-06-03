@@ -11,7 +11,6 @@ import com.example.bangkitcapstone.core.model.User
 import com.example.bangkitcapstone.databinding.FragmentRegisterBinding
 import com.google.firebase.firestore.FirebaseFirestore
 
-
 class RegisterFragment : Fragment() {
 
     private var _binding: FragmentRegisterBinding? = null
@@ -49,14 +48,16 @@ class RegisterFragment : Fragment() {
         val phone = binding.edtPhone.text.toString()
 
         val user = User(1, name, address, gender, date_birth, email, password, phone)
-
         db.collection("users")
             .add(user)
             .addOnSuccessListener { documentReference ->
-                Log.d("syid", "DocumentSnapshot written with ID: ${documentReference.id}")
+                Log.d(
+                    "RegisterFragment",
+                    "DocumentSnapshot written with ID: ${documentReference.id}"
+                )
             }
             .addOnFailureListener { e ->
-                Log.w("syid", "Error adding document", e)
+                Log.w("RegisterFragment", "Error adding document", e)
             }
     }
 }
