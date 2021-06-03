@@ -127,7 +127,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:entries="@array/category"
         app:layout_constraintEnd_toEndOf="@+id/tv_case_data"
         app:layout_constraintStart_toStartOf="@+id/tv_case_data"
         app:layout_constraintTop_toBottomOf="@+id/tv_case_data" />
@@ -150,7 +149,7 @@
         app:layout_constraintTop_toBottomOf="@id/spinner_category" />
 
     <android.widget.Button
-        android:id="@+id/btn_register"
+        android:id="@+id/btn_create_report"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"

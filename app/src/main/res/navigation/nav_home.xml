@@ -27,5 +27,20 @@
         android:id="@+id/caseFormFragment"
         android:name="com.example.bangkitcapstone.ui.feature.cases.CaseFormFragment"
         android:label="@string/create_a_new_report"
-        tools:layout="@layout/fragment_case_form" />
+        tools:layout="@layout/fragment_case_form" >
+        <action
+            android:id="@+id/action_caseFormFragment_to_caseFeedbackFragment"
+            app:destination="@id/caseFeedbackFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/caseFeedbackFragment"
+        android:name="com.example.bangkitcapstone.ui.feature.cases.CaseFeedbackFragment"
+        android:label="@string/feedback"
+        tools:layout="@layout/fragment_case_feedback" >
+        <action
+            android:id="@+id/action_caseFeedbackFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

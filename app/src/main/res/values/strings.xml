@@ -32,14 +32,21 @@
     <string name="victim_data">Victim Data</string>
     <string name="case_data">Case Data</string>
     <string name="description">Description</string>
-
-    <string-array name="category">
-        <item>Select Category</item>
-        <item>Pemerkosaan</item>
-        <item>Perdagangan/Prostitusi</item>
-        <item>KDRT</item>
-        <item>Bully</item>
-        <item>Body Shaming</item>
-        <item>Rasisme</item>
-    </string-array>
+    <string name="feedback">Feedback</string>
+    <string name="tips_for_you">Tips for you :</string>
+    <string name="feedback_value">
+    1. Lorem ipsum dolor sit amet, consectetur adipiscing elit.\n
+    2. Sed blandit eros at lacinia lobortis.\n
+    3. Curabitur et nunc ornare, luctus justo vitae, ullamcorper odio.\n
+        \n
+    4. Nullam commodo quam sit amet pulvinar dictum.\n
+    5. Nulla faucibus dui eget massa pellentesque, vitae pretium tortor aliquam.\n
+        \n
+    6. Donec ornare massa non erat rutrum pharetra.\n
+    7. Praesent faucibus tortor ut sem volutpat fringilla.\n
+    8. Cras tincidunt mi non leo maximus, ac mollis massa vestibulum.\n
+    9. Morbi viverra elit eu eros rutrum, quis vehicula magna pulvinar.\n
+    10. Suspendisse sollicitudin mi vel odio ultricies convallis.\n
+</string>
+    <string name="done">Done</string>
 </resources>
