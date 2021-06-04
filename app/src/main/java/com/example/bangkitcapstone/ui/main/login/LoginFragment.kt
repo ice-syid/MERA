@@ -1,5 +1,6 @@
 package com.example.bangkitcapstone.ui.main.login
 
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -12,7 +13,6 @@ import com.example.bangkitcapstone.core.model.User
 import com.example.bangkitcapstone.core.utils.MyCallback
 import com.example.bangkitcapstone.databinding.FragmentLoginBinding
 import com.example.bangkitcapstone.ui.feature.HomeActivity
-import com.example.bangkitcapstone.ui.feature.home.HomeFragment
 import com.google.firebase.firestore.FirebaseFirestore
 
 class LoginFragment : Fragment() {
@@ -34,8 +34,22 @@ class LoginFragment : Fragment() {
             loginUser(object : MyCallback {
                 override fun onCallbackUser(value: User) {
                     Toast.makeText(requireContext(), "Successful", Toast.LENGTH_SHORT).show()
+
+                    val sharedPreferences =
+                        activity?.getSharedPreferences("USER", Context.MODE_PRIVATE)
+                    val editor = sharedPreferences?.edit()
+                    editor?.putString("name", value.name)
+                    editor?.putString("address", value.address)
+                    editor?.putString("gender", value.gender)
+                    editor?.putString("date_birth", value.date_birth)
+                    editor?.putString("email", value.email)
+                    editor?.putString("password", value.password)
+                    editor?.putString("phone", value.phone)
+                    editor?.apply()
+
                     val intent = Intent(activity, HomeActivity::class.java)
                     startActivity(intent)
+                    activity?.finish()
                 }
             })
         }

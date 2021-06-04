@@ -1,5 +1,6 @@
 package com.example.bangkitcapstone.ui.feature.home
 
+import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -26,7 +27,13 @@ class HomeFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+        val sharedPreferences =
+            activity?.getSharedPreferences("USER", Context.MODE_PRIVATE)
+        val name = sharedPreferences?.getString("name", "").toString()
+        val email = sharedPreferences?.getString("email", "").toString()
+
+        binding.tvName.text = name
+        binding.tvEmail.text = email
 
         if (activity != null) {
             val caseAdapter = CaseAdapter()
