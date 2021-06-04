@@ -6,9 +6,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.bangkitcapstone.R
+import com.example.bangkitcapstone.core.model.Case
 import com.example.bangkitcapstone.databinding.ItemListCaseBinding
 
-class CaseAdapter : RecyclerView.Adapter<CaseAdapter.ListViewHolder>() {
+class CaseAdapter(private val caseList: ArrayList<Case>) :
+    RecyclerView.Adapter<CaseAdapter.ListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder =
         ListViewHolder(
@@ -16,22 +18,31 @@ class CaseAdapter : RecyclerView.Adapter<CaseAdapter.ListViewHolder>() {
         )
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-        holder.bind()
+        val case = caseList[position]
+        holder.bind(case)
     }
 
-    override fun getItemCount(): Int = 5
+    override fun getItemCount(): Int = caseList.size
 
     inner class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val binding = ItemListCaseBinding.bind(itemView)
 
-        fun bind() {
+        fun bind(case: Case) {
             with(binding) {
                 Glide.with(itemView.context)
                     .load("https://static.wikia.nocookie.net/solo-leveling/images/5/59/Jin-Woo_Profile.png/revision/latest/scale-to-width-down/340?cb=20200208070835")
                     .into(imgCase)
-                tvTitle.text = "Bullying "
-                tvDescription.text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur mattis."
-                tvStatus.text = "Accepted"
+                tvTitle.text = when (case.type) {
+                    "1" -> "Pemerkosaan"
+                    "2" -> "Perdagangan/Prostitusi"
+                    "3" -> "KDRT"
+                    "4" -> "Bully"
+                    "5" -> "Body Shaming"
+                    "6" -> "Rasisme"
+                    else -> "Violence"
+                }
+                tvDescription.text = case.description
+                tvStatus.text = case.status
             }
         }
     }

@@ -90,7 +90,7 @@ class CaseFormFragment : Fragment() {
         val status = "Accepted"
         val feedback = ""
 
-        if (name != "" && address != "" && gender != "" && date_birth != "" && type != "" && description != "") {
+        if (name != "" && address != "" && gender != "" && date_birth != "" && type != "0" && description != "") {
             return Case(
                 email_user,
                 name,

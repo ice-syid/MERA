@@ -30,7 +30,9 @@
         tools:layout="@layout/fragment_case_form" >
         <action
             android:id="@+id/action_caseFormFragment_to_caseFeedbackFragment"
-            app:destination="@id/caseFeedbackFragment" />
+            app:destination="@id/caseFeedbackFragment"
+            app:popUpTo="@id/homeFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/caseFeedbackFragment"

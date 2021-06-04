@@ -33,15 +33,15 @@ class CaseFragment : Fragment() {
 
         val index = arguments?.getInt(ARG_SECTION_NUMBER, 0) ?: 1
         when (index) {
-            1 -> setCase()
-            2 -> setCase()
+//            1 -> setCase()
+//            2 -> setCase()
         }
     }
 
-    private fun setCase() {
-        caseAdapter = CaseAdapter()
-        recyclerView.adapter = caseAdapter
-    }
+//    private fun setCase() {
+//        caseAdapter = CaseAdapter()
+//        recyclerView.adapter = caseAdapter
+//    }
 
     companion object {
         private const val ARG_SECTION_NUMBER = "section_number"
