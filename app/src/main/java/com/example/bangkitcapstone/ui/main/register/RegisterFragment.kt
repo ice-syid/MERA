@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.bangkitcapstone.core.model.User
@@ -27,27 +28,40 @@ class RegisterFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.btnRegister.setOnClickListener {
-            createUser()
-            val actionRegisterLogin =
-                RegisterFragmentDirections.actionRegisterFragmentToLoginFragment()
-            view.findNavController().navigate(actionRegisterLogin)
+            val user = getDataFromUser()
+            if (user != null) {
+                createUser(user)
+                Toast.makeText(requireContext(), "Successful", Toast.LENGTH_SHORT).show()
+                val actionRegisterLogin =
+                    RegisterFragmentDirections.actionRegisterFragmentToLoginFragment()
+                view.findNavController().navigate(actionRegisterLogin)
+            } else {
+                Toast.makeText(requireContext(), "Failed", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 
-    private fun createUser() {
+    private fun getDataFromUser(): User? {
         val name = binding.edtName.text.toString()
         val address = binding.edtAddress.text.toString()
         val gender = when (binding.rgGender.checkedRadioButtonId) {
             2131231064 -> "Male"
             2131231063 -> "Female"
-            else -> "Unknown"
+            else -> ""
         }
         val date_birth = binding.edtDate.text.toString()
         val email = binding.edtEmail.text.toString()
         val password = binding.edtPassword.text.toString()
         val phone = binding.edtPhone.text.toString()
 
-        val user = User(1, name, address, gender, date_birth, email, password, phone)
+        return if (name != "" && address != "" && gender != "" && date_birth != "" && email != "" && password != "" && phone != "") {
+            User(name, address, gender, date_birth, email, password, phone)
+        } else {
+            null
+        }
+    }
+
+    private fun createUser(user: User) {
         db.collection("users")
             .add(user)
             .addOnSuccessListener { documentReference ->
