@@ -11,7 +11,7 @@
         android:id="@+id/img_profile"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -22,7 +22,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="32dp"
         android:text="@string/name"
         android:textColor="@color/white"
@@ -37,12 +37,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Abdurrasyid Muhasibi"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/tv_name"
         app:layout_constraintStart_toStartOf="@+id/tv_name"
-        app:layout_constraintTop_toBottomOf="@+id/tv_name" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_name"
+        tools:text="Abdurrasyid Muhasibi" />
 
     <TextView
         android:id="@+id/tv_address"
@@ -62,12 +62,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Jl Dieng 34 Bendogerit, Kota Blitar"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/tv_address"
         app:layout_constraintStart_toStartOf="@+id/tv_address"
-        app:layout_constraintTop_toBottomOf="@+id/tv_address" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_address"
+        tools:text="Blitar" />
 
     <TextView
         android:id="@+id/tv_gender"
@@ -87,12 +87,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="Male"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/tv_gender"
         app:layout_constraintStart_toStartOf="@+id/tv_gender"
-        app:layout_constraintTop_toBottomOf="@+id/tv_gender" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_gender"
+        tools:text="Male" />
 
     <TextView
         android:id="@+id/tv_date"
@@ -113,12 +113,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="20 Agustus 2000"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/tv_date"
         app:layout_constraintStart_toStartOf="@+id/tv_date"
-        app:layout_constraintTop_toBottomOf="@+id/tv_date" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_date"
+        tools:text="20 Agustus 2000" />
 
     <TextView
         android:id="@+id/tv_email"
@@ -138,12 +138,12 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="ice.syid@gmail.com"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/tv_email"
         app:layout_constraintStart_toStartOf="@+id/tv_email"
-        app:layout_constraintTop_toBottomOf="@+id/tv_email" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_email"
+        tools:text="ice.syid@gmail.com" />
 
     <TextView
         android:id="@+id/tv_phone"
@@ -163,11 +163,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:text="0895366331099"
         android:textColor="@color/white"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/tv_phone"
         app:layout_constraintStart_toStartOf="@+id/tv_phone"
-        app:layout_constraintTop_toBottomOf="@+id/tv_phone" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_phone"
+        tools:text="0895366331099" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

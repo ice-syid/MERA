@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.example.bangkitcapstone.core.ui.CaseAdapter
 import com.example.bangkitcapstone.databinding.FragmentHomeBinding
 
@@ -34,6 +35,11 @@ class HomeFragment : Fragment() {
 
         binding.tvName.text = name
         binding.tvEmail.text = email
+        with(binding) {
+            Glide.with(view.context)
+                .load("https://static.wikia.nocookie.net/solo-leveling/images/5/59/Jin-Woo_Profile.png/revision/latest/scale-to-width-down/340?cb=20200208070835")
+                .into(imgProfile)
+        }
 
         if (activity != null) {
             val caseAdapter = CaseAdapter()
