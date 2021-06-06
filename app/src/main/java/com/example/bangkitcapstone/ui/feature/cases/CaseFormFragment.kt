@@ -67,7 +67,7 @@ class CaseFormFragment : Fragment() {
 
     @SuppressLint("SimpleDateFormat")
     private fun getDataFromUser(): Case? {
-        val pattern = "dd-MM-yyyy"
+        val pattern = "dd-MM-yyyy HH:mm:ss"
         val simpleDateFormat = SimpleDateFormat(pattern)
         val time = simpleDateFormat.format(Date())
 
