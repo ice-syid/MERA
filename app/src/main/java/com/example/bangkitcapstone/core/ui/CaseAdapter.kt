@@ -28,11 +28,18 @@ class CaseAdapter(private val caseList: ArrayList<Case>) :
         private val binding = ItemListCaseBinding.bind(itemView)
 
         fun bind(case: Case) {
+            val image = when ((1..5).random()) {
+                1 -> R.drawable.image_1
+                2 -> R.drawable.image_2
+                3 -> R.drawable.image_3
+                else -> R.drawable.image_4
+            }
             with(binding) {
                 Glide.with(itemView.context)
-                    .load("https://static.wikia.nocookie.net/solo-leveling/images/5/59/Jin-Woo_Profile.png/revision/latest/scale-to-width-down/340?cb=20200208070835")
+                    .load(image)
                     .into(imgCase)
-                tvTitle.text = when (case.type) {
+                tvName.text = case.name
+                tvType.text = when (case.type) {
                     "1" -> "Pemerkosaan"
                     "2" -> "Perdagangan/Prostitusi"
                     "3" -> "KDRT"
@@ -42,7 +49,6 @@ class CaseAdapter(private val caseList: ArrayList<Case>) :
                     else -> "Violence"
                 }
                 tvDescription.text = case.description
-                tvStatus.text = case.status
             }
         }
     }

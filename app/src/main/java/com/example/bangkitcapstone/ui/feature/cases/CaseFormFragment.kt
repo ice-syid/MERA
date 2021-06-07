@@ -1,6 +1,7 @@
 package com.example.bangkitcapstone.ui.feature.cases
 
 import android.annotation.SuppressLint
+import android.app.DatePickerDialog
 import android.content.Context
 import android.os.Bundle
 import android.util.Log
@@ -47,6 +48,24 @@ class CaseFormFragment : Fragment() {
             "Rasisme"
         )
 
+        val calendar = Calendar.getInstance()
+        val datePicker = DatePickerDialog.OnDateSetListener { _, year, month, dayOfMonth ->
+            calendar.set(Calendar.YEAR, year)
+            calendar.set(Calendar.MONTH, month)
+            calendar.set(Calendar.DAY_OF_MONTH, dayOfMonth)
+            setCalendar(calendar)
+        }
+
+        binding.ibDate.setOnClickListener {
+            DatePickerDialog(
+                requireContext(),
+                datePicker,
+                calendar.get(Calendar.YEAR),
+                calendar.get(Calendar.MONTH),
+                calendar.get(Calendar.DAY_OF_MONTH)
+            ).show()
+        }
+
         binding.spinnerCategory.adapter =
             ArrayAdapter(requireContext(), R.layout.spinner_item, options)
 
@@ -63,6 +82,12 @@ class CaseFormFragment : Fragment() {
             }
 
         }
+    }
+
+    private fun setCalendar(calendar: Calendar) {
+        val format = "dd-MM-yyyy"
+        val sdf = SimpleDateFormat(format, Locale.UK)
+        binding.edtDate.text = sdf.format((calendar.time)).toString()
     }
 
     @SuppressLint("SimpleDateFormat")

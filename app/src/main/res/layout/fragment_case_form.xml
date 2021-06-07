@@ -82,17 +82,17 @@
 
     </RadioGroup>
 
-    <EditText
+    <TextView
         android:id="@+id/edt_date"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:hint="@string/date"
         android:importantForAutofill="no"
-        android:inputType="date"
         android:textColor="@color/white"
         android:textColorHighlight="@color/black"
         android:textColorHint="@color/white"
+        android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="@id/rg_gender"
         app:layout_constraintRight_toLeftOf="@id/ib_date"
         app:layout_constraintTop_toBottomOf="@id/rg_gender" />

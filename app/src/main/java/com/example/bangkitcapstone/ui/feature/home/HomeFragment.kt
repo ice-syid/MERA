@@ -42,11 +42,6 @@ class HomeFragment : Fragment() {
 
         binding.tvName.text = name
         binding.tvEmail.text = email
-        with(binding) {
-            Glide.with(view.context)
-                .load("https://static.wikia.nocookie.net/solo-leveling/images/5/59/Jin-Woo_Profile.png/revision/latest/scale-to-width-down/340?cb=20200208070835")
-                .into(imgProfile)
-        }
 
         caseList = arrayListOf()
         caseAdapter = CaseAdapter(caseList)
