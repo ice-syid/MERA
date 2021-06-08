@@ -1,5 +1,6 @@
 package com.example.bangkitcapstone.ui.feature.cases
 
+import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -23,11 +24,16 @@ class CaseFragment : Fragment() {
     private lateinit var reportCaseAdapterRejected: ReportCaseAdapter
     private var _binding: FragmentCaseBinding? = null
     private val binding get() = _binding as FragmentCaseBinding
+    private var email: String = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+        val sharedPreferences =
+            activity?.getSharedPreferences("USER", Context.MODE_PRIVATE)
+        email = sharedPreferences?.getString("email", "").toString()
+
         _binding = FragmentCaseBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -55,10 +61,15 @@ class CaseFragment : Fragment() {
         }
     }
 
-    private fun EventChangeListener(status: String, list: ArrayList<Case>, adapterReport: ReportCaseAdapter) {
+    private fun EventChangeListener(
+        status: String,
+        list: ArrayList<Case>,
+        adapterReport: ReportCaseAdapter
+    ) {
         db = FirebaseFirestore.getInstance()
         db.collection("cases")
             .whereEqualTo("status", status)
+            .whereEqualTo("email_user", email)
             .orderBy("date_case", Query.Direction.DESCENDING)
             .addSnapshotListener(object : EventListener<QuerySnapshot> {
                 override fun onEvent(value: QuerySnapshot?, error: FirebaseFirestoreException?) {

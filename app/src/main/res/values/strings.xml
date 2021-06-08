@@ -3,7 +3,9 @@
 
     <string name="create_account">Create Account</string>
     <string name="create_a_new_report">Create a New Report</string>
+    <string name="done">Done</string>
     <string name="login">Login</string>
+    <string name="logout">Logout</string>
     <string name="register">Register</string>
     <string name="name">Name</string>
     <string name="address">Address</string>
@@ -50,5 +52,4 @@
     9. Morbi viverra elit eu eros rutrum, quis vehicula magna pulvinar.\n
     10. Suspendisse sollicitudin mi vel odio ultricies convallis.\n
     </string>
-    <string name="done">Done</string>
 </resources>

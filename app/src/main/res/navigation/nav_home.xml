@@ -29,7 +29,13 @@
         android:id="@+id/profileFragment"
         android:name="com.example.bangkitcapstone.ui.feature.profile.ProfileFragment"
         android:label="@string/profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profileFragment_to_homePageFragment"
+            app:destination="@id/homePageFragment"
+            app:popUpTo="@id/homePageFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
     <fragment
         android:id="@+id/caseFormFragment"
         android:name="com.example.bangkitcapstone.ui.feature.cases.CaseFormFragment"
@@ -61,4 +67,9 @@
             android:name="case"
             app:argType="com.example.bangkitcapstone.core.model.Case" />
     </fragment>
+    <fragment
+        android:id="@+id/homePageFragment"
+        android:name="com.example.bangkitcapstone.ui.main.homepage.HomePageFragment"
+        android:label="fragment_home_page"
+        tools:layout="@layout/fragment_home_page" />
 </navigation>

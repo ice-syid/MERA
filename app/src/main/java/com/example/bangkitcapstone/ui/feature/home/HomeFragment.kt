@@ -24,11 +24,16 @@ class HomeFragment : Fragment() {
     private lateinit var db: FirebaseFirestore
     private lateinit var reportCaseAdapter: HomeCaseAdapter
 
+    private var email: String = ""
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        (requireActivity() as AppCompatActivity).supportActionBar?.hide()
+        val sharedPreferences =
+            activity?.getSharedPreferences("USER", Context.MODE_PRIVATE)
+        email = sharedPreferences?.getString("email", "").toString()
+
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -61,6 +66,7 @@ class HomeFragment : Fragment() {
     private fun EventChangeListener() {
         db = FirebaseFirestore.getInstance()
         db.collection("cases")
+            .whereEqualTo("email_user", email)
             .orderBy("date_case", Query.Direction.DESCENDING)
             .limit(5)
             .addSnapshotListener(object : EventListener<QuerySnapshot> {

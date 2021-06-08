@@ -1,14 +1,17 @@
 package com.example.bangkitcapstone.ui.feature.profile
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import com.bumptech.glide.Glide
+import androidx.navigation.findNavController
 import com.example.bangkitcapstone.databinding.FragmentProfileBinding
+import com.example.bangkitcapstone.ui.feature.HomeActivity
+
 
 class ProfileFragment : Fragment() {
 
@@ -40,6 +43,17 @@ class ProfileFragment : Fragment() {
         binding.tvDateValue.text = date_birth
         binding.tvEmailValue.text = email
         binding.tvPhoneValue.text = phone
+
+        binding.btnLogout.setOnClickListener {
+            val sharedPreferences =
+                activity?.getSharedPreferences("USER", Context.MODE_PRIVATE)
+            val editor = sharedPreferences?.edit()
+            editor?.clear()
+            editor?.apply()
+
+            val action = ProfileFragmentDirections.actionProfileFragmentToHomePageFragment()
+            view.findNavController().navigate(action)
+        }
     }
 
     override fun onResume() {
