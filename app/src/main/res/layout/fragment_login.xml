@@ -7,13 +7,13 @@
     android:background="@color/grey_900"
     tools:context=".ui.main.login.LoginFragment">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/img_logo"
         android:layout_width="180dp"
         android:layout_height="180dp"
         android:layout_marginTop="32dp"
         android:contentDescription="@string/content_description_image"
-        android:src="@drawable/ic_ppa"
+        android:src="@drawable/icon_mera"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
