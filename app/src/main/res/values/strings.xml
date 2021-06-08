@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BangkitCapstone</string>
+    <string name="app_name">MERA</string>
 
     <string name="create_account">Create Account</string>
     <string name="create_a_new_report">Create a New Report</string>
@@ -11,6 +11,7 @@
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="date">Date of Birth</string>
+    <string name="date_case">Date</string>
     <string name="email">Email</string>
     <string name="phone">Phone</string>
     <string name="password">Password</string>
@@ -31,6 +32,7 @@
     <string name="create">Create</string>
     <string name="victim_data">Victim Data</string>
     <string name="case_data">Case Data</string>
+    <string name="type">Type</string>
     <string name="description">Description</string>
     <string name="feedback">Feedback</string>
     <string name="tips_for_you">Tips for you :</string>
@@ -47,6 +49,6 @@
     8. Cras tincidunt mi non leo maximus, ac mollis massa vestibulum.\n
     9. Morbi viverra elit eu eros rutrum, quis vehicula magna pulvinar.\n
     10. Suspendisse sollicitudin mi vel odio ultricies convallis.\n
-</string>
+    </string>
     <string name="done">Done</string>
 </resources>

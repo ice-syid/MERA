@@ -3,14 +3,16 @@ package com.example.bangkitcapstone.core.ui
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.bangkitcapstone.R
 import com.example.bangkitcapstone.core.model.Case
 import com.example.bangkitcapstone.databinding.ItemListCaseBinding
+import com.example.bangkitcapstone.ui.feature.home.HomeFragmentDirections
 
-class CaseAdapter(private val caseList: ArrayList<Case>) :
-    RecyclerView.Adapter<CaseAdapter.ListViewHolder>() {
+class HomeCaseAdapter(private val caseList: ArrayList<Case>) :
+    RecyclerView.Adapter<HomeCaseAdapter.ListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder =
         ListViewHolder(
@@ -28,6 +30,11 @@ class CaseAdapter(private val caseList: ArrayList<Case>) :
         private val binding = ItemListCaseBinding.bind(itemView)
 
         fun bind(case: Case) {
+            itemView.setOnClickListener {
+                val action = HomeFragmentDirections.actionHomeFragmentToCaseDetailFragment(case)
+                itemView.findNavController().navigate(action)
+            }
+
             val image = when ((1..5).random()) {
                 1 -> R.drawable.image_1
                 2 -> R.drawable.image_2

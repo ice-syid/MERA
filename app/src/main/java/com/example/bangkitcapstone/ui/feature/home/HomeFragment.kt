@@ -10,9 +10,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.bumptech.glide.Glide
 import com.example.bangkitcapstone.core.model.Case
-import com.example.bangkitcapstone.core.ui.CaseAdapter
+import com.example.bangkitcapstone.core.ui.HomeCaseAdapter
 import com.example.bangkitcapstone.databinding.FragmentHomeBinding
 import com.google.firebase.firestore.*
 
@@ -23,7 +22,7 @@ class HomeFragment : Fragment() {
 
     private lateinit var caseList: ArrayList<Case>
     private lateinit var db: FirebaseFirestore
-    private lateinit var caseAdapter: CaseAdapter
+    private lateinit var reportCaseAdapter: HomeCaseAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,11 +43,11 @@ class HomeFragment : Fragment() {
         binding.tvEmail.text = email
 
         caseList = arrayListOf()
-        caseAdapter = CaseAdapter(caseList)
+        reportCaseAdapter = HomeCaseAdapter(caseList)
         with(binding.rvCase) {
             layoutManager = LinearLayoutManager(context)
             setHasFixedSize(true)
-            adapter = caseAdapter
+            adapter = reportCaseAdapter
         }
         EventChangeListener()
 
@@ -75,7 +74,7 @@ class HomeFragment : Fragment() {
                             caseList.add(dc.document.toObject(Case::class.java))
                         }
                     }
-                    caseAdapter.notifyDataSetChanged()
+                    reportCaseAdapter.notifyDataSetChanged()
                 }
             })
     }

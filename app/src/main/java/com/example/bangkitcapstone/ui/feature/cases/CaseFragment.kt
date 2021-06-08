@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bangkitcapstone.core.model.Case
-import com.example.bangkitcapstone.core.ui.CaseAdapter
+import com.example.bangkitcapstone.core.ui.ReportCaseAdapter
 import com.example.bangkitcapstone.databinding.FragmentCaseBinding
 import com.google.firebase.firestore.*
 
@@ -19,8 +19,8 @@ class CaseFragment : Fragment() {
     private lateinit var caseListAccepted: ArrayList<Case>
     private lateinit var caseListRejected: ArrayList<Case>
     private lateinit var db: FirebaseFirestore
-    private lateinit var caseAdapterAccepted: CaseAdapter
-    private lateinit var caseAdapterRejected: CaseAdapter
+    private lateinit var reportCaseAdapterAccepted: ReportCaseAdapter
+    private lateinit var reportCaseAdapterRejected: ReportCaseAdapter
     private var _binding: FragmentCaseBinding? = null
     private val binding get() = _binding as FragmentCaseBinding
 
@@ -42,20 +42,20 @@ class CaseFragment : Fragment() {
         when (index) {
             1 -> {
                 caseListAccepted = arrayListOf()
-                caseAdapterAccepted = CaseAdapter(caseListAccepted)
-                recyclerView.adapter = caseAdapterAccepted
-                EventChangeListener("Accepted", caseListAccepted, caseAdapterAccepted)
+                reportCaseAdapterAccepted = ReportCaseAdapter(caseListAccepted)
+                recyclerView.adapter = reportCaseAdapterAccepted
+                EventChangeListener("Accepted", caseListAccepted, reportCaseAdapterAccepted)
             }
             2 -> {
                 caseListRejected = arrayListOf()
-                caseAdapterRejected = CaseAdapter(caseListRejected)
-                recyclerView.adapter = caseAdapterRejected
-                EventChangeListener("Rejected", caseListRejected, caseAdapterRejected)
+                reportCaseAdapterRejected = ReportCaseAdapter(caseListRejected)
+                recyclerView.adapter = reportCaseAdapterRejected
+                EventChangeListener("Rejected", caseListRejected, reportCaseAdapterRejected)
             }
         }
     }
 
-    private fun EventChangeListener(status: String, list: ArrayList<Case>, adapter: CaseAdapter) {
+    private fun EventChangeListener(status: String, list: ArrayList<Case>, adapterReport: ReportCaseAdapter) {
         db = FirebaseFirestore.getInstance()
         db.collection("cases")
             .whereEqualTo("status", status)
@@ -71,7 +71,7 @@ class CaseFragment : Fragment() {
                             list.add(dc.document.toObject(Case::class.java))
                         }
                     }
-                    adapter.notifyDataSetChanged()
+                    adapterReport.notifyDataSetChanged()
                 }
             })
     }
