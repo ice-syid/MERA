@@ -75,9 +75,12 @@ class RegisterFragment : Fragment() {
     private fun getDataFromUser(): User? {
         val name = binding.edtName.text.toString()
         val address = binding.edtAddress.text.toString()
-        val gender = when (binding.rgGender.checkedRadioButtonId) {
-            2131231064 -> "Male"
-            2131231063 -> "Female"
+        val rbId = binding.rgGender.checkedRadioButtonId
+        val rb: View = binding.rgGender.findViewById(rbId)
+        val idx = binding.rgGender.indexOfChild(rb)
+        val gender = when (idx) {
+            0 -> "Male"
+            1 -> "Female"
             else -> ""
         }
         val date_birth = binding.edtDate.text.toString()
