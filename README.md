@@ -36,7 +36,7 @@ App features :
 |:-----------:|:--------:|:--------:|
 | Home | Create Report | Feedback |
 
-|<img src=assets_readme/image_report.jpg align="center" height="400" width="200" ></a> |<img src=assets_readme/image_detail_report  align="center" height="400" width="200" ></a>|<img src=assets_readme/image_profile  align="center" height="400" width="200" ></a>|
+|<img src=assets_readme/image_report.jpg align="center" height="400" width="200" ></a> |<img src=assets_readme/image_detail_report.jpg  align="center" height="400" width="200" ></a>|<img src=assets_readme/image_profile.jpg  align="center" height="400" width="200" ></a>|
 |:-----------:|:--------:|:--------:|
 | Report | Report Detail | Profile |
 
