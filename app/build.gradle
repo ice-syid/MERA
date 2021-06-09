@@ -37,6 +37,10 @@ android {
     buildFeatures {
         viewBinding true
     }
+    aaptOptions{
+        noCompress = "tflite"
+        noCompress = "lite"
+    }
 }
 
 dependencies {
@@ -60,4 +64,8 @@ dependencies {
     implementation "androidx.navigation:navigation-ui-ktx:2.3.5"
     // viewpager
     implementation "androidx.viewpager2:viewpager2:1.0.0"
+    // tflite
+    implementation 'org.tensorflow:tensorflow-lite-support:0.1.0'
+    implementation 'org.tensorflow:tensorflow-lite-task-vision:0.1.0'
+    implementation 'org.tensorflow:tensorflow-lite-task-text:0.1.0'
 }

@@ -35,6 +35,7 @@
     <string name="victim_data">Victim Data</string>
     <string name="case_data">Case Data</string>
     <string name="type">Type</string>
+    <string name="cases">Cases</string>
     <string name="description">Description</string>
     <string name="feedback">Feedback</string>
     <string name="tips_for_you">Tips for you :</string>

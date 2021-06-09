@@ -139,7 +139,7 @@
             tools:text="@string/date_case" />
 
         <TextView
-            android:id="@+id/tv_status"
+            android:id="@+id/tv_category"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -148,6 +148,18 @@
             app:layout_constraintEnd_toEndOf="@+id/tv_date_case"
             app:layout_constraintStart_toStartOf="@+id/tv_date_case"
             app:layout_constraintTop_toBottomOf="@+id/tv_date_case"
+            tools:text="@string/cases" />
+
+        <TextView
+            android:id="@+id/tv_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/tv_category"
+            app:layout_constraintStart_toStartOf="@+id/tv_category"
+            app:layout_constraintTop_toBottomOf="@+id/tv_category"
             tools:text="@string/accepted" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>

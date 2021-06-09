@@ -16,11 +16,17 @@ import com.example.bangkitcapstone.R
 import com.example.bangkitcapstone.core.model.Case
 import com.example.bangkitcapstone.databinding.FragmentCaseFormBinding
 import com.google.firebase.firestore.FirebaseFirestore
+import org.tensorflow.lite.Interpreter
+import java.io.FileInputStream
+import java.io.IOException
+import java.nio.MappedByteBuffer
+import java.nio.channels.FileChannel
 import java.text.SimpleDateFormat
 import java.util.*
 
 class CaseFormFragment : Fragment() {
 
+    private var tflite: Interpreter? = null
     private var _binding: FragmentCaseFormBinding? = null
     private val binding get() = _binding as FragmentCaseFormBinding
     private val db = FirebaseFirestore.getInstance()
@@ -34,6 +40,12 @@ class CaseFormFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        try {
+            tflite = Interpreter(loadModelFile())
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
+
         setupUI()
     }
 
@@ -71,6 +83,16 @@ class CaseFormFragment : Fragment() {
 
         binding.btnCreateReport.setOnClickListener {
             val case = getDataFromUser()
+
+            val description = case?.description
+            val category = inference(description)
+
+            case?.category = when (case?.type) {
+                "1", "2", "3" -> "Severe Cases"
+                "4", "5", "6" -> "Mild Cases"
+                else -> ""
+            }
+
             if (case != null) {
                 createCase(case)
                 Toast.makeText(requireContext(), "Successful", Toast.LENGTH_SHORT).show()
@@ -149,5 +171,27 @@ class CaseFormFragment : Fragment() {
             .addOnFailureListener { e ->
                 Log.w("CaseFormFragment", "Error adding document", e)
             }
+    }
+
+    private fun inference(text: String?): Array<Float> {
+        val output = arrayOf<Float>()
+//        tflite?.run(text, output)
+        return output
+    }
+
+    @Throws(IOException::class)
+    private fun loadModelFile(): MappedByteBuffer {
+        activity?.assets?.openFd("model2.tflite").use { fileDescriptor ->
+            FileInputStream(fileDescriptor?.fileDescriptor).use { inputStream ->
+                val fileChannel = inputStream.channel
+                val startOffset = fileDescriptor?.startOffset
+                val declaredLength = fileDescriptor?.declaredLength
+                return fileChannel.map(
+                    FileChannel.MapMode.READ_ONLY,
+                    startOffset!!,
+                    declaredLength!!
+                )
+            }
+        }
     }
 }

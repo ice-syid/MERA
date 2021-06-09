@@ -60,6 +60,7 @@ class CaseDetailFragment : Fragment() {
             tvType.text = type
             tvDescription.text = case.description
             tvDateCase.text = case.date_case
+            tvCategory.text = case.category
             tvStatus.text = case.status
         }
     }
