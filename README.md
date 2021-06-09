@@ -65,7 +65,7 @@ Here the steps to create a database on Cloud Firestore :
 3.  Set up development environment, by add the required dependencies and client libraries to our app, to connect firestore with app.
 4.  Create a data.
 
-## Machine Learning
+### Machine Learning
 1.  Clone this github repository : [Link](https://github.com/JulizarHw31/MERA/blob/f34c80083cc46877b03fe60ba59a188d91f04a28/Machine_Learning_LSTM_MERA.ipynb)
 2.  Open with google colaboratory or Jupyter Notebook.
 3.  Install and import all packages.
