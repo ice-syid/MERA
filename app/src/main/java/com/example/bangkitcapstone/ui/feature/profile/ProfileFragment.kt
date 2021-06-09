@@ -8,9 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import com.example.bangkitcapstone.databinding.FragmentProfileBinding
-import com.example.bangkitcapstone.ui.feature.HomeActivity
+import com.example.bangkitcapstone.ui.main.MainActivity
 
 
 class ProfileFragment : Fragment() {
@@ -51,8 +50,9 @@ class ProfileFragment : Fragment() {
             editor?.clear()
             editor?.apply()
 
-            val action = ProfileFragmentDirections.actionProfileFragmentToHomePageFragment()
-            view.findNavController().navigate(action)
+            val intent = Intent(activity, MainActivity::class.java)
+            startActivity(intent)
+            activity?.finish()
         }
     }
 

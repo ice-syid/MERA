@@ -39,6 +39,7 @@ class HomeFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        db = FirebaseFirestore.getInstance()
         val sharedPreferences =
             activity?.getSharedPreferences("USER", Context.MODE_PRIVATE)
         val name = sharedPreferences?.getString("name", "").toString()
@@ -64,7 +65,6 @@ class HomeFragment : Fragment() {
     }
 
     private fun EventChangeListener() {
-        db = FirebaseFirestore.getInstance()
         db.collection("cases")
             .whereEqualTo("email_user", email)
             .orderBy("date_case", Query.Direction.DESCENDING)
